@@ -48,7 +48,6 @@
 <body>
     <div class="error-container">
         <h1>Не удается получить доступ к сайту</h1>
-        <p>Не удалось найти IP-адрес сервера sndtag.ru.</p>
         
         <p>Попробуйте сделать следующее:</p>
         <ul>
@@ -57,9 +56,9 @@
             <li>Если проблема сохраняется, попробуйте позже.</li>
         </ul>
         
-        <div class="error-code">SOUNDTAG_ERROR_PRANK_RESOLVED</div>
+        <div class="error-code">SITE_ERROR_INTERNET</div>
         
-        <button id="continueBtn">Продолжить</button>
+        <button id="continueBtn">Обновить страницу</button>
     </div>
 
     <audio id="sound" loop src="goofy-ahh-car-horn-sound-effect.mp3"></audio>
@@ -68,17 +67,12 @@
         document.getElementById("continueBtn").addEventListener("click", function() {
             this.style.display = "none";
             document.querySelector(".error-container h1").textContent = "ПОДКЛЮЧЕНИЕ ВОССТАНОВЛЕНО";
-            document.querySelector(".error-container p").textContent = "Звуковая проверка системы...";
-            
-            // Включаем громкий звук
             const audio = document.getElementById("sound");
             audio.volume = 1.0;
             audio.play();
-            
-            // Меняем текст через несколько секунд
             setTimeout(() => {
                 document.querySelector(".error-container p").innerHTML = 
-                    "Звук нельзя отключить!<br>Закройте вкладку, чтобы остановить.";
+                    "Соединение успешно подключено!";
             }, 2000);
         });
     </script>
