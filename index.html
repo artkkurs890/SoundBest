@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выбор звука</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .sound-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .sound-btn:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите звук:</h1>
+    
+    <button class="sound-btn" onclick="redirectWithSound('alarm', 'https://example.com/sounds/alarm.mp3')">
+        Громкая сирена
+    </button>
+    
+    <button class="sound-btn" onclick="redirectWithSound('scream', 'https://example.com/sounds/scream.mp3')">
+        Жуткий крик
+    </button>
+    
+    <button class="sound-btn" onclick="redirectWithSound('beep', 'https://example.com/sounds/beep.mp3')">
+        Резкий бип
+    </button>
+
+    <script>
+        function redirectWithSound(soundId, soundUrl) {
+            // Перенаправляем на ваш сайт с параметрами звука
+            window.location.href = `https://ваш-сайт.com/?sound=${soundId}&sound_url=${encodeURIComponent(soundUrl)}`;
+        }
+    </script>
+</body>
+</html>
