@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Прикол</title>
+    <style>
+        body { text-align: center; font-family: Arial; padding: 50px; }
+        #warning { color: red; font-size: 24px; }
+        button { padding: 10px 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div id="warning">⚠ Внимание! Громкий звук! Нажмите "Включить" для продолжения.</div>
+    <button onclick="startPrank()">Включить звук</button>
+
+    <audio id="sound" loop src="<iframe width="110" height="200" src="https://www.myinstants.com/instant/sistema-poiska-pi-sa-62168/embed/"></audio>
+
+    <script>
+        function startPrank() {
+            document.getElementById("warning").textContent = "Звук включён! Закройте вкладку, чтобы остановить.";
+            const audio = document.getElementById("sound");
+            audio.volume = 1.0;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
